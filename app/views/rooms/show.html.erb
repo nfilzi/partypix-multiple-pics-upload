@@ -1,0 +1,7 @@
+<%= @room.name %>
+
+<% @room.pictures.each do |pic| %>
+  <% unless pic.photo.url.nil? %>
+    <%= cl_image_tag pic.photo.url, width: 300 %>
+  <% end %>
+<% end %>
