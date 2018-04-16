@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :rooms, only: [:show] do
     resources :pictures, only: [:new, :create]
   end
+
+  resources :pictures, only: [:destroy]
 end

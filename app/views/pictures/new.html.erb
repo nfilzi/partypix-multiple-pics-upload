@@ -1,8 +1,7 @@
 <h1>Add a pic for room <%= @room.name %></h1>
 
-<%= simple_form_for([@room, @picture]) do |f| %>
-  <%= f.input :photo, input_html: {multiple: true, name: "photos[]"} %>
-  <%= f.input :photo_cache, as: :hidden %>
-
-  <%= f.submit 'Go' %>
+<%= simple_form_for [@room, @picture], html: { class: 'dropzone', id: 'dropzone-upload' } do |f| %>
+  <div class="fallback">
+    <input name="photos[]" type="file" multiple />
+  </div>
 <% end %>
